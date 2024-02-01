@@ -1,1 +1,48 @@
+import java.util.Scanner;
+/*
+- Kullanıcı Girişi
+Eğer şifre yanlış ise kullanıcıya şifresini sıfırlayıp sıfırlamayacağını sorun,
+eğer kullanıcı sıfırlamak isterse yeni girdiği şifrenin hatalı girdiği
+ve unuttuğu şifre ile aynı olmaması gerektiğini kontrol edip ,
+şifreler aynı ise ekrana "Şifre oluşturulamadı, lütfen başka şifre giriniz.
+" sorun yoksa "Şifre oluşturuldu" yazan programı yazınız.
+ */
+
+public class Main {
+    public static void main(String[] args) {
+        int password1, password2;
+        String username;
+        Scanner input=new Scanner(System.in);
+        System.out.print("Kullanıcı Adı giriniz: ");
+        System.out.print("Şifrenizi giriniz: ");
+        username = input.nextLine();
+        password1= input.nextInt();
+        System.out.println("tekrar giriniz");
+        password2= input.nextInt();
+        if (password1==password2){
+            System.out.println("şifre başarılı şekild eoluşturuldu");
+        }
+        else{
+            System.out.println("yanlış şifre şifre oluşturma için 1 e çıkma için 2 ye basınız ");
+            int decided= input.nextInt();
+            switch (decided){
+                case 1:
+                    int newpassaword= input.nextInt();
+                    if(newpassaword==password1){
+                        System.out.println("oluşturulamadı");
+                    }
+                    else {
+                        System.out.println("şifre başarılı oluşturuldu");
+                    }
+                    break;
+                case 2:
+                    System.out.println("çıkış yaptınız");
+                    break;
+                default:
+            }
+        }
+
+    }
+}
+
 kullanıc şifre
